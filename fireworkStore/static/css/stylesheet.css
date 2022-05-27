@@ -1,0 +1,84 @@
+@font-face{font-family:'Roboto';src:url('font/Roboto-Medium.ttf');}
+body {
+  color: #FF0000;
+  background-size: cover;
+  font-family: 'Roboto', sans-serif;
+}
+
+.container {
+  width: 100%;
+  padding-right: var(--bs-gutter-x, 0.75rem);
+  padding-left: var(--bs-gutter-x, 0.75rem);
+  margin-right: auto;
+  margin-left: auto;
+}
+
+@media (min-width: 576px) {
+  .container {
+    max-width: 540px;
+  }
+}
+@media (min-width: 768px) {
+  .container  {
+    max-width: 720px;
+  }
+}
+@media (min-width: 992px) {
+  .container  {
+    max-width: 960px;
+  }
+}
+@media (min-width: 1200px) {
+  .container  {
+    max-width: 1140px;
+  }
+}
+@media (min-width: 1400px) {
+  .container  {
+    max-width: 1320px;
+  }
+}
+
+#title.container {
+  padding-top: 20px;
+  padding-bottom: 40px;
+  min-height: calc(10vh - 40px);
+}
+
+#header.container {
+  padding-top: 20px;
+  min-height: calc(10vh - 40px);
+}
+
+
+#title-text {
+  text-align: center;
+}
+
+#contentBox {
+    margin: 0 auto;
+    width: 100%;
+}
+
+#contentBox .column {
+    float: left;
+    margin: 0 auto;
+    width: 25%;
+    text-align: center
+}
+
+a.button7 {
+  font-weight: 700;
+  color: white;
+  text-decoration: none;
+  padding: .8em 1em calc(.8em + 3px);
+  border-radius: 3px;
+  background: rgb(64,199,129);
+  box-shadow: 0 -3px rgb(53,167,110) inset;
+  transition: 0.2s;
+}
+a.button7:hover { background: rgb(53, 167, 110); }
+a.button7:active {
+  background: rgb(33,147,90);
+  box-shadow: 0 3px rgb(33,147,90) inset;
+}
