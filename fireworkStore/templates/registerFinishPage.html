@@ -1,0 +1,25 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="{% static 'css/stylesheet.css'%}">
+    <title>Firework</title>
+</head>
+<body>
+    <div class="container" id="title">
+      <h1 id="title-text">Firework client</h1>
+    </div>
+    <div class="registration-start-container">
+      <h1>Finish creating account</h1>
+      <form action="" method="post">
+          {% csrf_token %}
+          <label for="name">name: </label>
+          <input id="name" type="text" name="name" value="">
+          <label for="password">name: </label>
+          <input id="password" type="password" name="password" value="">
+          <input type="submit" value="finish registration" />
+      </form>
+    </div>
+</body>
+</html>

@@ -15,9 +15,11 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-from fireworkStore.views import index_page
+from fireworkStore.views import index_page, register_page, register_page_finish
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', index_page),
+    path('registration/start', register_page),
+    path('registration/finish/<str:token>', register_page_finish),
 ]
