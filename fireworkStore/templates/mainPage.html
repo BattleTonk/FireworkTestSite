@@ -5,26 +5,35 @@
     <meta charset="utf-8">
     <link rel="stylesheet" href="{% static 'css/stylesheet.css'%}">
     <title>Firework</title>
+    <link rel="shortcut icon" type="image/png" href="{% static 'img/favicon.ico' %}">
   </head>
   <body>
-    <div class="container" id="title">
-      <h1 id="title-text">Firework client</h1>
-    </div>
-    <div class="container" id="header">
-      <div id="contentBox">
-        <div class="column">
-          <a href="registration/start" class="button7">Register</a>
-        </div>
-        <div class="column">
-          <a href="#on" class="button7">Login</a>
-        </div>
-        <div class="column">
-          <a href="#on" class="button7">Features</a>
-        </div>
-        <div class="column">
-          <a href="#on" class="button7">Buy</a>
+      <div class="wrapper">
+        <div class="container" id="title">
+          <h1 id="title-text">Firework client</h1>
         </div>
       </div>
-    </div>
+      <div class="wrapper">
+        <div class="container">
+          <div class="menuItem">
+            <a href="https://discord.gg/RDCyubkEEn" class="button7">
+              <Img src="{% static 'img/discord.png' %}" Width="23" Height="20">
+              Discord
+            </a>
+          </div>
+          <div class="menuItem">
+            <a href="registration/start" class="button7">Register</a>
+          </div>
+          <div class="menuItem">
+            <a href="login" class="button7">Login</a>
+          </div>
+          <div class="menuItem">
+            <a href="#on" class="button7">Features</a>
+          </div>
+          <div class="menuItem">
+            <a href="#on" class="button7">Buy</a>
+          </div>
+        </div>
+      </div>
   </body>
 </html>

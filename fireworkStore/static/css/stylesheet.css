@@ -1,42 +1,29 @@
 @font-face{font-family:'Roboto';src:url('font/Roboto-Medium.ttf');}
 body {
   color: #FF0000;
-  background-size: cover;
   font-family: 'Roboto', sans-serif;
+  background-image: url('../img/potunFon1.png');
+  background-size: cover;
+}
+
+img, svg {
+    vertical-align: middle;
+}
+
+.content {
+  position: relative;
+}
+
+.wrapper{
+  max-width: 1170px;
+  margin: 0 auto;
+  position: relative;
 }
 
 .container {
-  width: 100%;
-  padding-right: var(--bs-gutter-x, 0.75rem);
-  padding-left: var(--bs-gutter-x, 0.75rem);
-  margin-right: auto;
-  margin-left: auto;
-}
-
-@media (min-width: 576px) {
-  .container {
-    max-width: 540px;
-  }
-}
-@media (min-width: 768px) {
-  .container  {
-    max-width: 720px;
-  }
-}
-@media (min-width: 992px) {
-  .container  {
-    max-width: 960px;
-  }
-}
-@media (min-width: 1200px) {
-  .container  {
-    max-width: 1140px;
-  }
-}
-@media (min-width: 1400px) {
-  .container  {
-    max-width: 1320px;
-  }
+    display: flex;
+    justify-content: center;
+    align-content: center;
 }
 
 #title.container {
@@ -45,10 +32,12 @@ body {
   min-height: calc(10vh - 40px);
 }
 
-#header.container {
-  padding-top: 20px;
-  min-height: calc(10vh - 40px);
+.menuItem {
+  margin-left: 3px;
+  margin-right: 3px;
 }
+
+
 
 .registration-start-container {
     padding-right: var(--bs-gutter-x, 0.75rem);
@@ -84,12 +73,12 @@ a.button7 {
   text-decoration: none;
   padding: 0.8em 1em 0.8em;
   border-radius: 3px;
-  background: rgb(64,199,129);
+  background: rgb(186,23,30);
   transition: 0.2s;
 }
-a.button7:hover { background: rgb(53, 167, 110); }
+a.button7:hover { background: rgb(174, 26, 32); }
 a.button7:active {
-  background: rgb(33,147,90);
+  background: rgb(136,18,23);
 }
 
 .c-button {

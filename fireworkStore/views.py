@@ -4,7 +4,7 @@ import hashlib
 from django.shortcuts import redirect
 import time
 from django.contrib.auth.models import User
-from django.contrib.auth import authenticate
+from django.contrib.auth import authenticate, login
 
 
 tokens_for_registration = []
@@ -63,3 +63,32 @@ def register_page_finish(request, token):
         return redirect('/registration/start')
     else:
         return render(request, 'registerFinishPage.html', context)
+
+
+def login_page(request):
+    context = {}
+
+    clear_expired_tokens()
+
+    if request.method == 'POST':
+        name = request.POST["name"]
+        password = request.POST["password"]
+        user = authenticate(username=name, password=password)
+        if user is not None:
+            if user.is_active:
+                login(request, user)
+                return redirect('/')
+            else:
+                context = {
+                    "error": True,
+                    "type": "invalid login"
+                }
+                return render(request, 'loginPage.html', context)
+        else:
+            context = {
+                "error": True,
+                "type": "invalid login"
+            }
+            return render(request, 'loginPage.html', context)
+    else:
+        return render(request, 'loginPage.html', context)
