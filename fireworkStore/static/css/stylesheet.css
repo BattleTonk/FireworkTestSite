@@ -1,9 +1,17 @@
 @font-face{font-family:'Roboto';src:url('font/Roboto-Medium.ttf');}
+
+html, body{
+        height: 100%;
+        margin: 0;
+        padding: 0;
+}
+
 body {
   color: #FF0000;
   font-family: 'Roboto', sans-serif;
-  background-image: url('../img/potunFon1.png');
-  background-size: cover;
+background: rgb(255,78,194);
+background: linear-gradient(31deg, rgba(255,78,194,1) 0%, rgba(255,0,0,1) 33%, rgba(255,142,80,1) 100%);
+  background-attachment: fixed;
 }
 
 img, svg {
@@ -24,6 +32,8 @@ img, svg {
     display: flex;
     justify-content: center;
     align-content: center;
+    flex-flow: row wrap;
+    margin-top: 10px;
 }
 
 #title.container {
@@ -35,6 +45,7 @@ img, svg {
 .menuItem {
   margin-left: 3px;
   margin-right: 3px;
+  padding-bottom: 2em;
 }
 
 
@@ -81,23 +92,74 @@ a.button7:active {
   background: rgb(136,18,23);
 }
 
-.c-button {
-  min-width: 100px;
-  min-height: 50px;
-  font-family: inherit;
-  appearance: none;
-  border: 0;
-  border-radius: 5px;
-  background: #4676d7;
-  color: #fff;
-  padding: 8px 16px;
-  font-size: 1rem;
-  cursor: pointer;
+.ac-container{
+    width: 600px;
+    margin: 10px auto 30px auto;
+    float: left;
 }
-.c-button:hover {
-  background: #1d49aa;
+
+.ac-container label{
+    padding: 5px 20px;
+    position: relative;
+    z-index: 20;
+    display: block;
+    height: 30px;
+    cursor: pointer;
+    color: white;
+    line-height: 33px;
+    font-size: 19px;
+    background: rgb(186,23,30);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#eaeaea',GradientType=0 );
+    border-radius: 3px;
 }
-.c-button:focus {
-  outline: none;
-  box-shadow: 0 0 0 4px #cbd6ee;
+}
+
+.ac-container label:hover{
+    background: rgb(174, 26, 32);
+}
+
+.ac-container input:checked + label,
+.ac-container input:checked + label:hover{
+    background: rgb(136,18,23);
+    color: white;
+}
+
+.ac-container label:hover:after,
+.ac-container input:checked + label:hover:after{
+    content: '';
+    position: absolute;
+    width: 24px;
+    height: 24px;
+    right: 13px;
+    top: 7px;
+    background: transparent rgb(174, 26, 32);
+}
+
+.ac-container input:checked + label:hover:after {
+    background-image: url(http://netcribe.com/example/arrow_up.png);
+}
+
+.ac-container input{
+    display: none;
+}
+
+.ac-container article{
+    background: rgba(174, 26, 32, 0.5);
+    margin-top: -1px;
+    overflow: hidden;
+    height: 0px;
+    position: relative;
+    z-index: 10;
+    transition: height 0.3s ease-in-out, box-shadow 0.6s linear;
+}
+.ac-container input:checked ~ article {
+    transition: height 0.3s ease-in-out, box-shadow 0.6s linear;
+    height: 63px;
+}
+
+.ac-container article p{
+    color: white;
+    line-height: 23px;
+    font-size: 14px;
+    padding: 5px;
 }

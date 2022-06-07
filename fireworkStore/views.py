@@ -3,7 +3,7 @@ import smtplib
 import hashlib
 from django.shortcuts import redirect
 import time
-from django.contrib.auth.models import User
+from .models import CustomUser
 from django.contrib.auth import authenticate, login
 
 
@@ -51,12 +51,13 @@ def register_page_finish(request, token):
 
     if request.method == 'POST':
         time_now = int(time.time())
+        print(CustomUser)
         for i in range(len(tokens_for_registration)):
             if token == tokens_for_registration[i][0] and tokens_for_registration[i][1] + 600 >= time_now:
                 name = request.POST["name"]
                 password = request.POST["password"]
                 email = tokens_for_registration[i][2]
-                user = User.objects.create_user(name, email, password)
+                user = CustomUser.objects.create_user(name, email, password)
                 del tokens_for_registration[i]
                 user.save()
                 return redirect('/')
@@ -92,3 +93,8 @@ def login_page(request):
             return render(request, 'loginPage.html', context)
     else:
         return render(request, 'loginPage.html', context)
+
+
+def features_page(request):
+    context = {}
+    return render(request, 'featuresPage.html', context)
