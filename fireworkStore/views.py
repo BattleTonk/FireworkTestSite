@@ -51,7 +51,6 @@ def register_page_finish(request, token):
 
     if request.method == 'POST':
         time_now = int(time.time())
-        print(CustomUser)
         for i in range(len(tokens_for_registration)):
             if token == tokens_for_registration[i][0] and tokens_for_registration[i][1] + 600 >= time_now:
                 name = request.POST["name"]
@@ -98,3 +97,8 @@ def login_page(request):
 def features_page(request):
     context = {}
     return render(request, 'featuresPage.html', context)
+
+
+def buy_page(request):
+    context = {}
+    return render(request, 'buyPage.html', context)
