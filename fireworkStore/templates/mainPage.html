@@ -16,7 +16,7 @@
       <div class="wrapper">
         <div class="container">
           <div class="menuItem">
-            <a href="https://discord.gg/RDCyubkEEn" class="button7">
+            <a href="https://discord.gg/RDCyubkEEn" target="_blank" class="button7">
               <Img src="{% static 'img/discord.png' %}" Width="23" Height="20">
               Discord
             </a>
@@ -31,7 +31,13 @@
             <a href="features" class="button7">Features</a>
           </div>
           <div class="menuItem">
-            <a href="buy" class="button7">Buy</a>
+              {% if boughtClient %}
+                  <a href="download" target="_blank" class="button7">
+                      Download
+                  </a>
+              {% else %}
+                  <a href="buy" class="button7">Buy</a>
+              {% endif %}
           </div>
         </div>
       </div>

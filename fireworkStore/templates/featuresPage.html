@@ -16,7 +16,7 @@
       <div class="wrapper">
         <div class="container">
           <div class="menuItem">
-            <a href="https://discord.gg/RDCyubkEEn" class="button7">
+            <a href="https://discord.gg/RDCyubkEEn" target="_blank" class="button7">
               <Img src="{% static 'img/discord.png' %}" Width="23" Height="20">
               Discord
             </a>
@@ -31,7 +31,13 @@
             <a href="features" class="button7">Features</a>
           </div>
           <div class="menuItem">
-            <a href="buy" class="button7">Buy</a>
+              {% if boughtClient %}
+                  <a href="download" target="_blank" class="button7">
+                      Download
+                  </a>
+              {% else %}
+                  <a href="buy" class="button7">Buy</a>
+              {% endif %}
           </div>
         </div>
       </div>
@@ -47,43 +53,55 @@
                        <p>LOL</p>
                    </article>
               </div>
+          </section>
+          <section class="ac-container">
               <div>
-                   <input id="ac-2" name="accordion-1" type="checkbox" checked />
+                   <input id="ac-2" name="accordion-2" type="checkbox" checked />
                    <label for="ac-2">COMBAT</label>
                    <article>
                        <p>LOL</p>
                    </article>
               </div>
+          </section>
+          <section class="ac-container">
               <div>
-                   <input id="ac-3" name="accordion-1" type="checkbox" checked />
+                   <input id="ac-3" name="accordion-2" type="checkbox" checked />
                    <label for="ac-3">MOVEMENT</label>
                    <article>
                        <p>LOL</p>
                    </article>
               </div>
+          </section>
+          <section class="ac-container">
               <div>
-                   <input id="ac-4" name="accordion-1" type="checkbox" checked />
+                   <input id="ac-4" name="accordion-3" type="checkbox" checked />
                    <label for="ac-4">RENDER</label>
                    <article>
                        <p>LOL</p>
                    </article>
               </div>
+          </section>
+          <section class="ac-container">
               <div>
-                   <input id="ac-5" name="accordion-1" type="checkbox" checked />
+                   <input id="ac-5" name="accordion-5" type="checkbox" checked />
                    <label for="ac-5">MISC</label>
                    <article>
                        <p>LOL</p>
                    </article>
               </div>
+          </section>
+          <section class="ac-container">
               <div>
-                   <input id="ac-6" name="accordion-1" type="checkbox" checked />
+                   <input id="ac-6" name="accordion-6" type="checkbox" checked />
                    <label for="ac-6">WORLD</label>
                    <article>
                        <p>LOL</p>
                    </article>
               </div>
+          </section>
+          <section class="ac-container">
               <div>
-                   <input id="ac-7" name="accordion-1" type="checkbox" checked />
+                   <input id="ac-7" name="accordion-7" type="checkbox" checked />
                    <label for="ac-7">CLIENT</label>
                    <article>
                        <p>LOL</p>

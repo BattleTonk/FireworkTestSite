@@ -55,16 +55,28 @@ img, svg {
     padding-left: var(--bs-gutter-x, 0.75rem);
     margin-right: auto;
     margin-left: auto;
-    background: #dedede;
     padding: 20px;
-    border: solid 6px rgb(186,23,30);
+    border: solid 6px transparent;
+    border-image: linear-gradient(0deg, rgba(255,125,210,1) 0%, rgba(80,255,247,1) 100%);
+    background-clip: padding-box;
+    border-image-slice: 1;
     max-width: 400px;
     border-radius: 3px;
-    background: white;
+    background: rgb(72, 72, 72);
+    color: rgb(128, 174, 255);
 }
 
-
 input[type=text], select {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+  box-sizing: border-box;
+}
+
+input[type=password], select {
   width: 100%;
   padding: 12px 20px;
   margin: 8px 0;
@@ -120,8 +132,23 @@ a.button7:active {
   background: rgb(136,18,23);
 }
 
+a.qiwiPay {
+  font-weight: 700;
+  font-size: 40px;
+  text-decoration: none;
+  padding: 0.8em 1em 0.8em;
+  border-radius: 15px;
+  color: #fff;
+  background: #FF8C00;
+  transition: 0.2s;
+}
+a.qiwiPay:hover { background: #FF8200; }
+a.qiwiPay:active {
+  background: #E77600;
+}
+
 .ac-container{
-    width: 600px;
+    width: 250px;
     margin: 10px auto 30px auto;
     float: left;
 }
@@ -136,19 +163,22 @@ a.button7:active {
     color: white;
     line-height: 33px;
     font-size: 19px;
-    background: rgb(186,23,30);
+    background: rgb(255,125,210);
+    background: linear-gradient(0deg, rgba(255,125,210,1) 0%, rgba(80,255,247,1) 100%);
     filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#eaeaea',GradientType=0 );
     border-radius: 3px;
 }
 }
 
 .ac-container label:hover{
-    background: rgb(174, 26, 32);
+    background: rgb(255,125,210);
+    background: linear-gradient(0deg, rgba(255,125,210,1) 0%, rgba(80,255,247,1) 100%);
 }
 
 .ac-container input:checked + label,
 .ac-container input:checked + label:hover{
-    background: rgb(136,18,23);
+    background: rgb(255,125,210);
+    background: linear-gradient(0deg, rgba(255,125,210,1) 0%, rgba(80,255,247,1) 100%);
     color: white;
 }
 
@@ -172,8 +202,11 @@ a.button7:active {
 }
 
 .ac-container article{
-    background: rgba(174, 26, 32, 0.5);
+    background: rgb(72, 72, 72);
+    outline: 3px solid rgb(115, 115, 115);
     margin-top: -1px;
+    margin-left: 6px;
+    margin-right: 6px;
     overflow: hidden;
     height: 0px;
     position: relative;
@@ -186,7 +219,7 @@ a.button7:active {
 }
 
 .ac-container article p{
-    color: white;
+    color: rgb(128, 174, 255);
     line-height: 23px;
     font-size: 14px;
     padding: 5px;

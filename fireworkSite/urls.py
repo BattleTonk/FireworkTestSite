@@ -15,7 +15,7 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-from fireworkStore.views import index_page, register_page, register_page_finish, login_page, features_page, buy_page
+from fireworkStore.views import index_page, register_page, register_page_finish, login_page, features_page, buy_page, qiwi_oplata, download_page
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -25,4 +25,6 @@ urlpatterns = [
     path('login', login_page),
     path('features',  features_page),
     path('buy', buy_page),
+    path("qiwioplata", qiwi_oplata),
+    path("download", download_page)
 ]

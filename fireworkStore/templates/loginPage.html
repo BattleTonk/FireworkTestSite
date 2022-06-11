@@ -13,11 +13,15 @@
     </div>
     <div class="registration-start-container">
       <h1>Login</h1>
+        {% if error %}
+            <p>{{ type }}</p>
+        {% else %}
+        {% endif %}
       <form action="" method="post">
           {% csrf_token %}
-          <label for="name">name: </label>
+          <label for="name">NAME: </label>
           <input id="name" type="text" name="name" value="">
-          <label for="password">name: </label>
+          <label for="password">PASSWORD: </label>
           <input id="password" type="password" name="password" value="">
           <input type="submit" value="login" />
       </form>
